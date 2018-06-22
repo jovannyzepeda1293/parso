@@ -8,8 +8,10 @@ class HelloWorld extends React.Component{
 
   render(){
     return(
-      <div>
-        <h1>{this.state.message}</h1>
+      <div className="row">
+        <div className="col-md-12">
+        <h1>{this.state.message}<span className="badge badge-secondary">Web Developer</span></h1>
+	</div>
       </div>
     )
   }
