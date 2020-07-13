@@ -13,4 +13,13 @@ class HomeController < ApplicationController
       points: points
     },status: :ok
   end
+
+
+  def data
+    data = [['Sunday',15339], ['Monday',21345], ['Tuesday', 18483], ['Wednesday', 24003], ['Thrusday',23489], ['Friday',24092], ['Sunday',1203]]
+    render json: {
+      success: true,
+      data: data
+    }
+  end
 end
