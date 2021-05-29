@@ -12,8 +12,14 @@
   </head>
 
   <body>
-     <div class="container">
-	     <%= yield %>
+    <%= react_component("TopBar") %>
+    <div id="wrapper">
+       <%= react_component("SideBar") %>
+      <div id="page-content-wrapper">
+        <div class="container-fluid mt-3">
+          <%= yield %>
+        </div>
       </div>
+    </div>
   </body>
 </html>
