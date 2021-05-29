@@ -11,5 +11,9 @@ RSpec.describe 'Index system spec', type: :system do
     it 'screen should include maps components' do
       expect(page).to have_content('Datos del mapa')
     end
+
+    it 'screen should include charts components' do
+      expect(page).to have_css('[data-react-class="LineChart"]')
+    end
   end
 end

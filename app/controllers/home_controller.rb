@@ -9,16 +9,23 @@ class HomeController < ApplicationController
     }, status: :ok
   end
 
-
   def data
-    data = [['Sunday',15339], ['Monday',21345], ['Tuesday', 18483], ['Wednesday', 24003], ['Thrusday',23489], ['Friday',24092], ['Sunday',1203]]
     render json: {
       success: true,
-      data: data
+      data: chart_data
     }
   end
 
   private
+
+  def chart_data
+    [
+      ['Sunday', 15_339], ['Monday', 21_345], ['Tuesday', 18_483],
+      ['Wednesday', 24_003], ['Thrusday', 23_489], ['Friday', 24_092],
+      ['Sunday', 1_203]
+    ]
+  end
+
   def google_map_points
     [
       { lat: 25.774, lng: -80.19 },
