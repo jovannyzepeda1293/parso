@@ -4,15 +4,9 @@ class HomeController < ApplicationController
   end
 
   def locations
-    points = [
-      { lat: 25.774, lng: -80.19 },
-      { lat: 18.466, lng: -66.118 },
-      { lat: 32.321, lng: -64.757 }
-    ]
     render json: {
-      success: true,
-      points: points
-    },status: :ok
+      success: true, points: google_map_points
+    }, status: :ok
   end
 
 
@@ -22,5 +16,14 @@ class HomeController < ApplicationController
       success: true,
       data: data
     }
+  end
+
+  private
+  def google_map_points
+    [
+      { lat: 25.774, lng: -80.19 },
+      { lat: 18.466, lng: -66.118 },
+      { lat: 32.321, lng: -64.757 }
+    ]
   end
 end
